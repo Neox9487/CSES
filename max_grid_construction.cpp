@@ -4,6 +4,9 @@
 using namespace std;
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
     int n;
     cin >> n;
     vector<vector<int>> grid(n, vector<int>(n, 0));
