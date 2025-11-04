@@ -1,17 +1,32 @@
 #include <iostream>
 #include <vector>
-
-#define loop1(x, y) for(int i=x; i<y; i++)
-#define loop2(x, y) for(int j=x; j<y; j++)
-
+#include <set>
 using namespace std;
 
 int main() {
-    int n; cin>>n;
+    int n;
+    cin >> n;
     vector<vector<int>> grid(n, vector<int>(n, 0));
-    loop1(0, n) loop2(0, n) grid[i][j] = (i+j) % n;
-    loop1(0, n) {
-        loop2(0, n) cout<<grid[i][j]<<" ";
-        cout<<"\n";
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            set<int> used;
+
+            for (int k = 0; k < j; k++)
+                used.insert(grid[i][k]);
+
+            for (int k = 0; k < i; k++)
+                used.insert(grid[k][j]);
+
+            int x = 0;
+            while (used.count(x)) x++;
+            grid[i][j] = x;
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++)
+            cout << grid[i][j] << " ";
+        cout << "\n";
     }
 }
