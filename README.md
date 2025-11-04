@@ -7,13 +7,13 @@
 >cin.tie(nullptr);
 >```
 
-# Gray code 
+## Gray code 
 用公式  
 
 **$G(i) = i ⊕ (i>>1)$**
 > **⊕** 為 xor
 
-# Hanoi 
+## Hanoi 
 **河內塔**
 
 最少移動次數為  
@@ -25,10 +25,10 @@
 3. 再把那 n-1 個盤子從 aux 移到 dst（放在第 n 盤上面）
 
 
-# Creating String
+## Creating String
 用 dfs 遍歷所有排法
 
-# Apple Division
+## Apple Division
 狀態壓縮 + 枚舉子集合
 - 有 2^n 種子集合（約 1百萬，20位元），可以全部試
 - 計算子集合的總重量 sum_sub，另一組重量為 total_sum - sum_sub
@@ -38,23 +38,30 @@
 >**dp[i][j]** 表示   **「前 i 個蘋果能否組合出重量 j」**  
 >但這樣會超時（重量能到$10^{10}$，炸開)
 
-# Chessboard and Queens
+## Chessboard and Queens
 思路：
 - 用回溯嘗試在每行的自由格子放皇后
 - 判斷目前放的皇后和之前放的皇后是否有攻擊衝突（同列、同對角線）
 - 走到底放完 8 個皇后就算一種解法
 
-# Raab Game I
+## Raab Game I
 我不會
 
-# Max grid construction
+## Max grid construction
 思路：
 1. 對每一格 (i, j)： 把這一列左邊的數字 {grid[i][0..j-1]} 放入一個集合。
 2. 把這一欄上方的數字 {grid[0..i-1][j]} 放入同一集合。
 3. 從 0 開始找最小沒出現的數字填入 [i][j]
 
-# Knight Moves Grid
+## Knight Moves Grid
 用 BFS 找最短距離
 
-# Grid Coloring I
+## Grid Coloring I
 我不會
+
+## Digit Queries
+思路：
+1. 找出位於幾位數
+2. 找到其位於該區間內的第幾個數字
+3. 找到其位於該數字內的第幾個位
+很簡單喏
