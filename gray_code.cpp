@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// use method G(i) = i xor (i>>1)
+
 int main() {
     int n;
     cin >> n;
