@@ -1,34 +1,34 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
+#include <cmath>
+#include <climits>
 using namespace std;
 
 int main() {
     int n; cin >> n;
-    vector<int> weights(n);
-    int sum = 0;
+    vector<long long> weights(n);
+    long long total_sum = 0;
     for (int i = 0; i < n; i++) {
         cin >> weights[i];
-        sum += weights[i];
+        total_sum += weights[i];
     }
 
-    int half = sum / 2;
-    vector<bool> dp(half + 1, false);
-    dp[0] = true;
+    long long minimal = LLONG_MAX;
 
-    for (int w : weights) {
-        for (int j = half; j >= w; j--) {
-            dp[j] = dp[j] || dp[j - w];
+    for (int mask = 0; mask < (1 << n); mask++) {
+        long long sum_sub = 0;
+        for (int i = 0; i < n; i++) {
+            if (mask & (1 << i)) {
+                sum_sub += weights[i];
+            }
+        }
+        long long diff = abs(total_sum - 2 * sum_sub);
+        if (diff < minimal) {
+            minimal = diff;
         }
     }
 
-    int best = 0;
-    for (int j = half; j >= 0; j--) {
-        if (dp[j]) {
-            best = j;
-            break;
-        }
-    }
+    cout << minimal << "\n";
 
-    cout << sum - 2 * best << "\n";
+    return 0;
 }
