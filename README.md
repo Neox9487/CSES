@@ -1,9 +1,11 @@
-# Cpp 競程魔法 
-加這兩行可以加速輸入/輸出時間喔
-```cpp=
-ios::sync_with_stdio(false);
-cin.tie(nullptr);
-```
+# CSES 解題筆記
+
+> **Magic:**   
+>加這兩行可以加速輸入/輸出時間喔
+>```cpp=
+>ios::sync_with_stdio(false);
+>cin.tie(nullptr);
+>```
 
 # Gray code 
 用公式  
@@ -37,8 +39,7 @@ cin.tie(nullptr);
 >但這樣會超時（重量能到$10^{10}$，炸開)
 
 # Chessboard and Queens
-思路
-- 一行只能放一個皇后（因為同列不能衝突）
+思路：
 - 用回溯嘗試在每行的自由格子放皇后
 - 判斷目前放的皇后和之前放的皇后是否有攻擊衝突（同列、同對角線）
 - 走到底放完 8 個皇后就算一種解法
@@ -54,3 +55,6 @@ cin.tie(nullptr);
 
 # Knight Moves Grid
 用 BFS 找最短距離
+
+# Grid Coloring I
+我不會
