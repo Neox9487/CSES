@@ -1,3 +1,10 @@
+# Cpp 競程魔法 
+加這兩行可以加速輸入/輸出時間喔
+```cpp=
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+```
+
 # Gray code 
 用公式  
 
