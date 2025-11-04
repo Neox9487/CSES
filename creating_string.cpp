@@ -38,6 +38,9 @@ void dfs() {
 }
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     cin >> s;
     _sort();
     used.assign(s.size(), false);

@@ -5,6 +5,9 @@ using namespace std;
 // use method G(i) = i xor (i>>1)
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int n;
     cin >> n;
 
